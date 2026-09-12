@@ -1,22 +1,23 @@
-name: bootstrap
-on: workflow_dispatch
+name: build
+on: [push, workflow_dispatch]
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  unpack:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Unpack project zip
-        run: |
-          unzip -o spectra-mod.zip -x ".github/*" -d .
-          rm -f spectra-mod.zip
-      - name: Commit project files
-        run: |
-          git config user.name "spectra"
-          git config user.email "spectra@users.noreply.github.com"
-          git add -A
-          git commit -m "Add Spectra project files"
-          git push
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.12"
+      - run: gradle build --no-daemon --stacktrace
+      - uses: actions/upload-artifact@v4
+        with:
+          name: spectra-jar
+          path: build/libs/*.jar
