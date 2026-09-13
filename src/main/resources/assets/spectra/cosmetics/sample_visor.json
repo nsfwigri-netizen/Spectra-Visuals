@@ -1,7 +1,0 @@
-{
-  "id": "sample_visor",
-  "slot": "HEAD",
-  "model": "spectra:models/cosmetics/sample_visor.json",
-  "texture": "spectra:textures/cosmetics/sample_visor.png",
-  "animations": ["pulse"]
-}

@@ -1,10 +1,1 @@
-pluginManagement {
-    repositories {
-        maven {
-            name = 'Fabric'
-            url = 'https://maven.fabricmc.net/'
-        }
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
+cGx1Z2luTWFuYWdlbWVudCB7CglyZXBvc2l0b3JpZXMgewoJCW1hdmVuIHsgdXJsID0gJ2h0dHBzOi8vbWF2ZW4uZmFicmljbWMubmV0LycgfQoJCWdyYWRsZVBsdWdpblBvcnRhbCgpCgkJbWF2ZW5DZW50cmFsKCkKCX0KfQoKcm9vdFByb2plY3QubmFtZSA9ICJzcGVjdHJhIgo=
